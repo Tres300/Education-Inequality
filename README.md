@@ -2,9 +2,23 @@
 ## Description
 Data Science exploration project to answer the question: Is school performance predicted by socioeconomic factors?
 
+## Data Preparation
+The notebook `Education_Inequality_Data_Preparation.ipynb` was used to determine that both data sets are of appropriate quality. The clean data set was split 80/20 into training and testing datasets. The following changes/preperations were made:
+*   Rename the edgap columns `NCESSCH School ID`, `CT Pct Adults with College Degree`,`CT Unemployment Rate`, `CT Pct Childre In Married Couple Family`, `CT Median Household Income`, `School ACT average (or equivalent if SAT score)`, `School Pct Free and Reduced Lunch` to `id`, `percent_college`, `rate_unemployment`, `percent_married`, `median_income`, `average_act`, `percent_lunch`
+*   Rename the school_info columns `SCHOOL_YEAR`, `NCESSCH`, `MSTATE`, `MZIP`, `SCH_TYPE_TEXT`, `LEVEL` to `year`, `id`, `state`, `zip_code`, `school_type`, `school_level`
+*   All columns not renammed in a dataset were dropped.
+*   Negative average_act and percent_lunch values were dropped.
+*   Both datasets were joined on `id` using an inner-join.
+*   The resulting data was split 80/20 into training and testing datasets.
+
+## Clean Data
+`clean_education_inequality_train.csv `is the clean data file for training created by `Education_Inequality_Data_Preparation.ipynb`
+
+`clean_education_inequality_test.csv` is the clean data file for training created by `Education_Inequality_Data_Preparation.ipynb`
+
 ## Data Sources
 ### EdGap data
-EdGap_data.xlsx is the data set containing information about average ACT or SAT scores for schools and several socioeconomic characteristics of the school district in the year 2016.
+`EdGap_data.xlsx` is the data set containing information about average ACT or SAT scores for schools and several socioeconomic characteristics of the school district in the year 2016.
 
 All socioeconomic data (household income, unemployment, adult educational attainment, and family structure) are from the Census Bureau’s American Community Survey.
 
@@ -15,7 +29,7 @@ All socioeconomic data (household income, unemployment, adult educational attain
 Downloaded from: [https://github.com/galenegan/DATA-3320/blob/main/weather/seattle_rain.csv](https://github.com/galenegan/DATA-3320/raw/main/education/EdGap_data.xlsx)
 
 ### School information data
-ccd_sch_029_1617_w_1a_11212017.csv is the data set that contains basic information about each school from the [National Center for Education Statistics](https://nces.ed.gov/ccd/pubschuniv.asp).
+`ccd_sch_029_1617_w_1a_11212017.csv` is the data set that contains basic information about each school from the [National Center for Education Statistics](https://nces.ed.gov/ccd/pubschuniv.asp).
 
 This data set consists of basic identifying information about schools and can be assumed to be of reasonably high quality.
 
