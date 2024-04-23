@@ -10,11 +10,16 @@ The notebook `Education_Inequality_Data_Preparation.ipynb` was used to determine
 *   Negative average_act and percent_lunch values were dropped.
 *   Both datasets were joined on `id` using an inner-join.
 *   The resulting data was split 80/20 into training and testing datasets.
+*   The numeric values training and testing data were normalized using the mean and std of the training data, except average_act.
 
 ## Clean Data
-`clean_education_inequality_train.csv `is the clean data file for training created by `Education_Inequality_Data_Preparation.ipynb`
+`clean_edu_ineq_normalized_train.csv `is the clean data file for training created by `Education_Inequality_Data_Preparation.ipynb`.
 
-`clean_education_inequality_test.csv` is the clean data file for training created by `Education_Inequality_Data_Preparation.ipynb`
+`clean_edu_ineq_normalized_test.csv` is the clean data file for testing created by `Education_Inequality_Data_Preparation.ipynb`.
+
+`clean_edu_ineq_train_mean.csv` is the mean vector of the training data.
+
+`clean_edu_ineq_train_std.csv` is the std vector of the training data.
 
 ## Data Sources
 ### EdGap data
